@@ -55,7 +55,7 @@ body {
 
 <div id="light"></div>
 
-<button id="audioButton">Please Don't Press This Button</button>
+<button id="audioButton">Don't Press This Button</button>
 
 <script>
 const light = document.querySelector("#light");
@@ -68,7 +68,7 @@ document.addEventListener("mousemove", (event) => {
 
   setTimeout(() => {
     light.style.opacity = 0;
-    light.style.filter = "blur(3px)";
+    light.style.filter = "blur(1px)";
   }, 100);
 });
 
