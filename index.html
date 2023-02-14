@@ -1,21 +1,77 @@
 <style>
+body {
+  background-color: black;
+}
+
+#light {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 #audioButton {
   display: block;
   margin: 50px auto;
   padding: 15px 30px;
   font-size: 20px;
   font-weight: bold;
-  background-color: #3f51b5;
-  color: #fff;
+  background-color: transparent;
+  color: #18db79;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+  
+#audioButton:hover {
+  opacity: 1;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 </style>
+
+<div id="light"></div>
 
 <button id="audioButton">Please Don't Press This Button</button>
 
 <script>
+const light = document.querySelector("#light");
+
+document.addEventListener("mousemove", (event) => {
+  light.style.left = `${event.clientX}px`;
+  light.style.top = `${event.clientY}px`;
+  light.style.opacity = .3;
+  light.style.filter = "blur(5px)";
+
+  setTimeout(() => {
+    light.style.opacity = 0;
+    light.style.filter = "blur(3px)";
+  }, 100);
+});
+
 const button = document.getElementById("audioButton");
 let count = 0;
 
