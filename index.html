@@ -57,6 +57,24 @@ body {
 
 <button id="audioButton">Do Not Press This Button</button>
 
+<script src="https://tonejs.github.io/build/Tone.js"></script>
+
+<script>
+  /* global Tone */
+
+  function playTone () {
+    // create a tone.js "synth"
+    const synth = new Tone.Synth().toDestination()
+    // trigger the sound for the length of an 8th note
+    synth.triggerAttackRelease('C4', '8n')  
+  }
+  
+  const button = document.querySelector('button')
+  button.addEventListener('click', playTone)
+
+
+</script>
+
 <script>
 const light = document.querySelector("#light");
 
