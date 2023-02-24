@@ -10,37 +10,37 @@ body {
   border-radius: 100px;
   background-color: #fff;
   transform: translate(-50%, -50%);
-  opacity: 0;
+  opacity: 0; /* openai */
   pointer-events: none;
 }
 
 #audioButton {
   display: block;
   margin: 50px auto;
-  padding: 15px 30px;
+  padding: 15px 30px; /* openai */
   font-size: 20px;
   font-weight: bold;
-  background-color: transparent;
+  background-color: transparent; /* openai */
   color: #18db79;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #fff;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  text-shadow: 0 0 10px #fff; /* openai */
+  opacity: 0; /* openai */
+  transition: opacity 0.5s ease-in-out; /* openai */
   position: absolute;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
 }
   
-#audioButton:hover {
+#audioButton:hover { /* openai */
   opacity: 1;
   animation: pulse 1s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulse { /* openai */
   0% {
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -79,7 +79,7 @@ button.addEventListener("click", function() {
   count += 1;
   
   if (count === 1) {
-    const audio1 = new Audio("file:///Users/jennv/Desktop/watcher/but1.3:hehe.mp3");
+    const audio1 = new Audio("but1.3:hehe.mp3");
     audio1.play();
   } else if (count === 2) {
     const audio2 = new Audio("file:///Users/jennv/Desktop/watcher/but2.4:heh.mp3");
